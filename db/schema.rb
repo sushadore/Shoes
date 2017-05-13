@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512212058) do
+ActiveRecord::Schema.define(version: 20170513205349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "brands", force: :cascade do |t|
-    t.string "brand_name"
+    t.string "brandname"
     t.money "price", scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170512212058) do
   end
 
   create_table "stores", force: :cascade do |t|
-    t.string "store_name"
+    t.string "store"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
