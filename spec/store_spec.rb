@@ -9,4 +9,8 @@ describe Store do
     store = Store.create(store: "pneumonoultramicroscopicsilicovolcanoconiosis remains the  tremendously ultimate institution cognomen")
     expect(store.save).to eq false
   end
+  it "returns the store name in title case" do
+    store = Store.create(store: "susha's shOes")
+    expect(store.store).to eq "Susha's Shoes"
+  end
 end

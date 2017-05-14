@@ -3,7 +3,7 @@ class Brand < ActiveRecord::Base
   validates :brandname, presence: true, uniqueness: true, length: { maximum: 100, too_long: "%{count} characters maximum"}
   before_save :titlecase
 
-private
+  private
 
   def titlecase
     names = (self.brandname.split)
