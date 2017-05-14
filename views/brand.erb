@@ -1,0 +1,6 @@
+<h2><%= @brand.brandname %></h2><hr>
+
+<form action="/brand/<%= @brand.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button class="btn btn-primary" type="submit">Delete Brand</button>
+</form><br>

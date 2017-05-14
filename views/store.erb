@@ -1,13 +1,46 @@
 <h2><%= @store.store %></h2><hr>
+<h3>Select all brands at this store:</h3>
 
-<h3>Update Project</h3>
+<% if @brands.any? %>
+  <form action="/store/<%= @store.id %>" method="post">
+    <% @brands.each do |brand| %>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="brands_id[]" value="<%= brand.id %>"><%= brand.brandname %>
+        </label>
+      </div>
+    <% end %>
+    <button class="btn btn-primary" type="submit">Add brand</button>
+  </form>
+<%else %>
+  <a class="btn btn-primary" href="/brands/new">Add Brand</a>
+<% end %>
+
+ <% if @store.brands.any? %>
+ <h2>Brands for this store:</h2>
+
+  <ul>
+    <% @store.brands.each do |brand| %>
+   <li> <a href="/brand/<%= brand.id%>"><%= brand.brandname %></a></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <h5>There are no brands added to this store.</h5>
+<% end %>
+
+
+
+
+
+
+<h3>Update Store</h3>
 <form action ="/store/<%= @store.id%>" method="post">
   <input type="hidden" name="_method" value="patch">
   <div class="form-group">
-    <label for="store">Change Name</label>
+    <label for="store">New Name</label>
     <input class="form-control" type="text" name="store">
   </div>
-  <button class="btn btn-primary" type ="submit">Edit</button>
+  <button class="btn btn-primary" type ="submit">Update</button>
 </form><br>
 
 <form action="/store/<%= @store.id %>" method="post">

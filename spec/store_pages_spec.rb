@@ -19,21 +19,25 @@ describe "updating a store name", :type => :feature do
     expect(page).to have_content "Susha's Shoes"
     click_link "Susha's Shoes"
     fill_in "store", with: "Sushalou's"
-    click_button "Edit"
+    click_button "Update"
     expect(page).to have_content "Sushalou's"
   end
 end
 
-describe "deleting a store", :type => :feature do
-  it "allows user to delete a store" do
+describe "adding a brand to a store", :type => :feature do
+  it "allows user to add brands to a store" do
     visit "/"
     click_link "Add Store"
     fill_in "store", with: "susha's shoes"
     click_button "Add Store"
-    expect(page).to have_content "Susha's Shoes"
+    # click_link "Home"
+    # expect(page).to have_content "Susha's Shoes"
+    click_link "Add Brand"
+    fill_in "brandname", with: "solid sandals"
+    click_button "Add Brand"
+    expect(page).to have_content "Solid Sandals"
     click_link "Susha's Shoes"
-    expect(page).to have_content "Susha's Shoes"
-    click_button "Delete Store"
-    expect(page).to have_content " "
+    check "Solid Sandals"
+    expect(page).to have_content "Solid Sandals"
   end
 end

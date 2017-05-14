@@ -10,8 +10,8 @@ get "/" do
   erb :index
 end
 
-get "/inputs/new" do
-  erb :input_form
+get "/stores/new" do
+  erb :store_form
 end
 
 post "/stores" do
@@ -21,13 +21,14 @@ end
 
 get "/store/:id" do
   @store = Store.find(params["id"].to_i)
+  @brands = Brand.all
   erb :store
 end
 
 patch "/store/:id" do
   @store = Store.find(params["id"].to_i)
   @store.update(store: params["store"])
-  erb :store
+  redirect "/store/#{@store.id}"
 end
 
 delete "/store/:id" do
@@ -36,7 +37,30 @@ delete "/store/:id" do
   redirect "/"
 end
 
+post "/store/:id" do
+  @store = Store.find(params["id"].to_i)
+  @store.update(brand_ids: params["brands_id"])
+  @brands = Brand.all
+  redirect "/store/#{@store.id}"
+end
+
+get "/brands/new" do
+  erb :brand_form
+end
+
 post "/brands" do
   Brand.create(brandname: params["brandname"])
+  redirect "/"
+end
+
+get "/brand/:id" do
+  @brand = Brand.find(params["id"].to_i)
+  @stores = Store.all
+  erb :brand
+end
+
+delete "/brand/:id" do
+  brand = Brand.find(params["id"].to_i)
+  brand.delete
   redirect "/"
 end

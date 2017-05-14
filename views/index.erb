@@ -3,8 +3,6 @@
 <h1>Stores</h1><hr>
 
 <% if @stores.any? %>
-  <h2>Stores:</h2>
-
   <ul>
     <% @stores.each do |store| %>
       <li><h4><a href = "/store/<%= store.id %>"><%= store.store %></a></h4></li>
@@ -12,16 +10,14 @@
   </ul>
   <h4>Click store name to edit store or view associated brands.</h4>
 <%else %>
-  <h4>There are no stores in the database.</h4>
+  <h5>There are no stores in the database.</h5>
 <% end %>
 
-<a class="btn btn-primary" href="/inputs/new">Add Store</a><hr>
+<a class="btn btn-primary" href="/stores/new">Add Store</a>
 
 <h1>Brands</h1><hr>
 
 <% if @brands.any? %>
-  <h2>Brands:</h2>
-
   <ul>
     <% @brands.each do |brand| %>
       <li><h4><a href = "/brand/<%= brand.id %>"><%= brand.brandname %></a></h4></li>
@@ -29,7 +25,7 @@
   </ul>
   <h4>Click brand name to edit brand or view associated stores.</h4>
 <%else %>
-  <h4>There are no brands in the database.</h4>
+  <h5>There are no brands in the database.</h5>
 <% end %>
 
-<a class="btn btn-primary" href="/inputs/new">Add Brand</a>
+<a class="btn btn-primary" href="/brands/new">Add Brand</a>
