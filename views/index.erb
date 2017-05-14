@@ -5,7 +5,7 @@
 
   <ul>
     <% @stores.each do |store| %>
-      <li><a href = "/store/<%= store.id %>"><%= store.store %></a></li>
+      <li><h4><a href = "/store/<%= store.id %>"><%= store.store %></a></h4></li>
     <% end %>
   </ul>
   <h4>Click store name to edit store or view associated brands.</h4>

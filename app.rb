@@ -17,3 +17,14 @@ post "/stores" do
   Store.create(store: params["store"])
   redirect "/"
 end
+
+get "/store/:id" do
+  @store = Store.find(params["id"].to_i)
+  erb :store
+end
+
+patch "/store/:id" do
+  @store = Store.find(params["id"].to_i)
+  @store.update(store: params["store"])
+  erb :store
+end
