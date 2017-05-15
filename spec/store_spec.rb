@@ -6,7 +6,7 @@ describe Store do
   it { should validate_uniqueness_of :store }
 
   it "limits the length of the store name to 100 characters" do
-    store = Store.create(store: "pneumonoultramicroscopicsilicovolcanoconiosis remains the  tremendously ultimate institution cognomen")
+    store = Store.create(store: "s"*101)
     expect(store.save).to eq false
   end
   it "returns the store name in title case" do

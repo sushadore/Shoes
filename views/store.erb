@@ -10,7 +10,7 @@
         </label>
       </div>
     <% end %>
-    <button class="btn btn-primary" type="submit">Add brand</button>
+    <button class="btn btn-primary" type="submit">Add Brand</button>
   </form>
 <%else %>
   <a class="btn btn-primary" href="/brands/new">Add Brand</a>
@@ -28,11 +28,6 @@
   <h5>There are no brands added to this store.</h5>
 <% end %>
 
-
-
-
-
-
 <h3>Update Store</h3>
 <form action ="/store/<%= @store.id%>" method="post">
   <input type="hidden" name="_method" value="patch">
@@ -47,5 +42,3 @@
   <input type="hidden" name="_method" value="delete">
   <button class="btn btn-primary" type="submit">Delete Store</button>
 </form><br>
-
-<a class="btn btn-primary" href="/">Home</a>

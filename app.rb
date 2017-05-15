@@ -15,8 +15,12 @@ get "/stores/new" do
 end
 
 post "/stores" do
-  Store.create(store: params["store"])
-  redirect "/"
+  @store = Store.create(store: params["store"])
+  if @store.save
+    redirect "/"
+  else
+    erb :errors
+  end
 end
 
 get "/store/:id" do
@@ -49,8 +53,12 @@ get "/brands/new" do
 end
 
 post "/brands" do
-  Brand.create(brandname: params["brandname"], price: params["price"])
-  redirect "/"
+  @brand = Brand.create(brandname: params["brandname"], price: params["price"])
+  if @brand.save
+    redirect "/"
+  else
+    erb :errors
+  end
 end
 
 get "/brand/:id" do

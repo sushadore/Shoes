@@ -9,3 +9,13 @@ describe "adding a new brand", :type => :feature do
     expect(page).to have_content "Shea's Sandals"
   end
 end
+
+describe "requires valid brand input", :type => :feature do
+  it "requires valid brand name input" do
+    visit "/"
+    click_link "Add Brand"
+    fill_in "brandname", with: " "
+    click_button "Add Brand"
+    expect(page).to have_content "Input for Brandname can't be blank"
+  end
+end

@@ -6,7 +6,7 @@ describe Brand do
   it { should validate_uniqueness_of :brandname }
 
   it "limits the length of the brand name to 100 characters" do
-    brand = Brand.create(brandname: "supercalifragilisticexpialidocious ensures continual polysyllabic designation of this tremendously monumental establishment")
+    brand = Brand.create(brandname: "s"*101)
     expect(brand.save).to eq false
   end
 
