@@ -22,9 +22,7 @@ By Susha Dore 5.12.2017
 * Postgres
 
 ## Setup
-Anything after 'Type:' is a verbatim instruction requiring copy/paste or exact replication and is always followed by hitting 'return'.
-## Known Bugs
-Incomplete app with partial business logic in place and no user interface.
+
 ## Contact
 Email with questions or comments: susha.dore@gmail.com
 ## Technologies

@@ -1,7 +1,6 @@
 require "bundler/setup"
 Bundler.require(:default)
-require 'pry'
-# DONT FORGET TO REMOVE PRY//!!!!!!
+
 Dir[File.dirname(__FILE__) + '/lib/*.rb'].each { |file| require file }
 
 get "/" do
