@@ -49,7 +49,7 @@ get "/brands/new" do
 end
 
 post "/brands" do
-  Brand.create(brandname: params["brandname"])
+  Brand.create(brandname: params["brandname"], price: params["price"])
   redirect "/"
 end
 
