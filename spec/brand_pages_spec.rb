@@ -20,3 +20,15 @@ describe "requires valid brand input", :type => :feature do
     expect(page).to have_content "Input for Brandname can't be blank"
   end
 end
+
+describe "deleting a brand", :type => :feature do
+  it "allows user to delete brand" do
+    visit "/"
+    click_link "Add Brand"
+    fill_in "brandname", with: "shea's sandals"
+    click_button "Add Brand"
+    click_link "Shea's Sandals"
+    click_button "Delete Brand"
+    expect(page).to have_content " "
+  end
+end
