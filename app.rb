@@ -53,7 +53,7 @@ get "/brands/new" do
 end
 
 post "/brands" do
-  @brand = Brand.create(brandname: params["brandname"], price: params["price"])
+  @brand = Brand.new(brandname: params["brandname"], price: params["price"])
   if @brand.save
     redirect "/"
   else

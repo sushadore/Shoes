@@ -10,6 +10,19 @@ describe "adding a new store", :type => :feature do
   end
 end
 
+describe "requires valid store input", :type => :feature do
+  it "does not allow duplicate store names" do
+    visit "/"
+    click_link "Add Store"
+    fill_in "store", with: "sushalou's"
+    click_button "Add Store"
+    click_link "Add Store"
+    fill_in "store", with: "sushalou's"
+    click_button "Add Store"
+    expect(page).to have_content "Input for Store has already been taken"
+  end
+end
+
 describe "updating a store name", :type => :feature do
   it "allows user to update store name" do
     visit "/"

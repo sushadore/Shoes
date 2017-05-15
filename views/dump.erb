@@ -1,0 +1,15 @@
+change_column :brands, :price, :decimal, precision: 10, scale: 2
+create_table :brands do |t|
+  t.column(:brandname, :varchar )
+  t.column(:price, :money)
+  t.timestamps
+end
+create_table :brands_stores do |t|
+  t.column(:brand_id, :integer)
+  t.column(:store_id, :integer)
+  t.timestamps
+end
+create_table :stores do |t|
+  t.column(:store, :varchar)
+  t.timestamps
+end
