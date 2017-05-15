@@ -9,6 +9,7 @@ describe Store do
     store = Store.create(store: "s"*101)
     expect(store.save).to eq false
   end
+  
   it "returns the store name in title case" do
     store = Store.create(store: "susha's shOes")
     expect(store.store).to eq "Susha's Shoes"

@@ -1,31 +1,25 @@
-<!-- DELETE BRAND Page11111 -->
-
 <h1>Stores</h1><hr>
-
 <% if @stores.any? %>
   <ul>
     <% @stores.each do |store| %>
       <li><h4><a href = "/store/<%= store.id %>"><%= store.store %></a></h4></li>
     <% end %>
   </ul>
-  <h4>Click store name to delete store or list prices.</h4>
+  <h5>Click store name to delete store or associated brands.</h5>
 <%else %>
   <h5>There are no stores in the database.</h5>
 <% end %>
-
 <a class="btn btn-primary" href="/stores/new">Add Store</a>
 
 <h1>Brands</h1><hr>
-
 <% if @brands.any? %>
   <ul>
     <% @brands.each do |brand| %>
       <li><h4><a href = "/brand/<%= brand.id %>"><%= brand.brandname %>, $<%= brand.price %>0</a></h4></li>
     <% end %>
   </ul>
-  <h4>Click brand name to edit brand or view associated stores.</h4>
+  <h4>Click brand name to delete brand.</h4>
 <%else %>
   <h5>There are no brands in the database.</h5>
 <% end %>
-
 <a class="btn btn-primary" href="/brands/new">Add Brand</a>

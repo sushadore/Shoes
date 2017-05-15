@@ -51,3 +51,15 @@ describe "adding a brand to a store", :type => :feature do
     expect(page).to have_content "Solid Sandals"
   end
 end
+
+describe "deleting a store", :type => :feature do
+  it "allows user to delete store" do
+    visit "/"
+    click_link "Add Store"
+    fill_in "store", with: "susha's shoes"
+    click_button "Add Store"
+    click_link "Susha's Shoes"
+    click_button "Delete Store"
+    expect(page).to have_content " "
+  end
+end

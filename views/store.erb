@@ -1,6 +1,6 @@
 <h2><%= @store.store %></h2><hr>
-<h3>Select all brands at this store:</h3>
 
+<h3>Select all brands at this store:</h3>
 <% if @brands.any? %>
   <form action="/store/<%= @store.id %>" method="post">
     <% @brands.each do |brand| %>
@@ -16,15 +16,14 @@
   <a class="btn btn-primary" href="/brands/new">Add Brand</a>
 <% end %>
 
- <% if @store.brands.any? %>
- <h2>Brands for this store:</h2>
-
+<% if @store.brands.any? %>
+  <h2>Brands for this store:</h2>
   <ul>
     <% @store.brands.each do |brand| %>
-   <li> <a href="/brand/<%= brand.id%>"><%= brand.brandname %></a></li>
+      <li> <a href="/brand/<%= brand.id%>"><%= brand.brandname %></a></li>
     <% end %>
   </ul>
-  <% else %>
+<% else %>
   <h5>There are no brands added to this store.</h5>
 <% end %>
 

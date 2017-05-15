@@ -5,8 +5,9 @@ describe "adding a new brand", :type => :feature do
     visit "/"
     click_link "Add Brand"
     fill_in "brandname", with: "shea's sandals"
+    fill_in "price", with: 20
     click_button "Add Brand"
-    expect(page).to have_content "Shea's Sandals"
+    expect(page).to have_content "Shea's Sandals, $20.00"
   end
 end
 

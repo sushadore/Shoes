@@ -1,20 +1,17 @@
 <%if @store %>
   <ul>
     <% @store.errors.full_messages.each do |message| %>
-
-    <li>Input for <%= message %></li>
+      <li>Input for <%= message %></li>
     <% end %>
   </ul>
-<a class="btn btn-primary" href="/stores/new">Try Again</a>
+  <a class="btn btn-primary" href="/stores/new">Try Again</a>
 <% end %>
 
-  <%if @brand %>
-    <ul>
-      <% @brand.errors.full_messages.each do |message| %>
-
+<%if @brand %>
+  <ul>
+    <% @brand.errors.full_messages.each do |message| %>
       <li>Input for <%= message %></li>
-      <% end %>
-    </ul>
-
-    <a class="btn btn-primary" href="/brands/new">Try Again</a>
     <% end %>
+  </ul>
+  <a class="btn btn-primary" href="/brands/new">Try Again</a>
+<% end %>

@@ -4,7 +4,6 @@ class Brand < ActiveRecord::Base
   before_save :titlecase
 
   private
-
   def titlecase
     names = (self.brandname.split)
     names.each do |name|
