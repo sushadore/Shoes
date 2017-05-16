@@ -10,10 +10,10 @@ By Susha Dore 5.12.2017
 |Supports the addition, listing, update deletion of stores|Create: Susha's Shoes|Store List: Susha's Shoes|
 |Supports the addition and listing of shoe brands including dollar formatted price| Create: Tom's, 20|Brands List: Tom's $20.00|
 |Stores and brands returned in Titlecase|susha's shoes|Susha's Shoes|
-      <!-- ADD ERROR MESSAGES TO FINAL SPECS!!! -->
-|Does not allow blank fields on input forms| none | Error:|
-|Does not allow names to be more that 100 characters|101 letter title|Error:|
-|Does not allow duplicate names| Create: Susha's Shoes, Create: Susha's Shoes|Error:|
+|Does not allow blank fields on input forms| none | Error: Input for Brandname/Store can't be blank|
+|Does not allow names to be more that 100 characters|101 letter title|Error: Input for Brandname/Store 100 characters maximum|
+|Does not allow duplicate names| Create: Susha's Shoes|Error: Input for Brandname/Store has already been taken
+
 ## Requirements
 * ES6 compatible browser
 * Ruby
