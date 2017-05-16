@@ -4,6 +4,8 @@ Ruby Active Record exercise for Epicodus
 By Susha Dore 5.12.2017
 ### Description
 
+Saves records relating to stores and the brands they carry in a database using many-to-many relationships.
+
 ### Specifications
 |Description|Input|Output|
 |----------|:--------:|:---------|
